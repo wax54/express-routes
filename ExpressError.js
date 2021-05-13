@@ -16,7 +16,7 @@ function pageNotFound(req, res, next) {
 function expressErrorHandler(err, req, res, next) {
     const status = err.status || 500;
     const msg = err.msg;
-    return res.status(status).send("AN ERROR OCCURRED!" + msg);
+    return res.status(status).json({ response: { status, msg } });
 }
 
 
@@ -25,7 +25,6 @@ class ExpressError extends Error {
         super();
         this.msg = msg;
         this.status = status;
-        console.log(this.stack);
     }
 }
 module.exports = { ExpressError, expressErrorHandler, pageNotFound };
