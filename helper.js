@@ -48,4 +48,4 @@ function parseNums(numsString, parser = ',') {
     }
 }
 
-module.exports = { parseNums };
+module.exports = { parseNums, makeArrayOfNumbers };

@@ -16,7 +16,7 @@ function pageNotFound(req, res, next) {
 function expressErrorHandler(err, req, res, next) {
     const status = err.status || 500;
     const msg = err.msg;
-    return res.status(status).json({ response: { status, msg } });
+    return res.status(status).json({ result: { status, msg } });
 }
 
 
